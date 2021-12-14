@@ -1,0 +1,9 @@
+#python
+import requests
+from lxml import etree
+url = "https://github.com"
+response=requests.get(url).text
+
+tree = etree.HTML(response)
+title=tree.xpath('//head/title/text()')
+print(title)
